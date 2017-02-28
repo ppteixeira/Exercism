@@ -12,6 +12,8 @@ class Raindrops
         to_be_added = check(factor)
         response << to_be_added
       end
+      # Improvement:
+      # response << check(factor) if entry % factor == 0
     end
 
     if response.empty?
@@ -19,6 +21,9 @@ class Raindrops
     else
       response.join.to_s
     end
+    # to improve:
+    # response.empty? ? entry.to_s : response.join.to_s
+
   end
 
   def self.check(factor)
