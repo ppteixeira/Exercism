@@ -6,7 +6,7 @@ class Binary
   def self.to_decimal(arg)
     raise ArgumentError if arg =~ /[^0-1]/
     arg.reverse.split('').each_with_index.map do |element , index|
-      element == '1' ? 2**index : 0
+      element.to_i * 2**index
     end.reduce(:+)
   end
 end
